@@ -4,16 +4,16 @@
 \alias{make_plots}
 \title{make_plots}
 \usage{
-make_plots(var1, var2)
+make_plots(x, y)
 }
 \arguments{
-\item{var1}{variable 1 que es vol estudiar}
+\item{x}{a character vector with all independent variables}
 
-\item{var2}{variable 2 que es vol estudiar}
+\item{y}{y a character vector with the dependent variable of interest}
 }
 \value{
-a plot grid with two maps and a scatterplot
+a faceted choropleth map
 }
 \description{
-retorna dos mapes coropleta un per cada variable i el gràfic de dispersió
+makes choropleth maps with all variables of interest
 }
