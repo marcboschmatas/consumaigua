@@ -7,6 +7,7 @@
 #' make_corrplot(c("hotels_1000hab", "vab_relatiu_Agricultura", "renda_capita"), "consum_total")
 #' }
 #' @importFrom corrplot corrplot
+#' @importFrom sf st_drop_geometry
 #' @returns a correlation plot
 #' @export
 make_corrplot <- function(x, y){
