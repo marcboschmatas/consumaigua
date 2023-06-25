@@ -11,7 +11,9 @@
 #' @export
 make_corrplot <- function(x, y){
   vars_to_select <- c(y, x)
-  ct <- cor(sf::st_drop_geometry(consumaigua::munis_consum)[,vars_to_select])
+  df <- sf::st_drop_geometry(consumaigua::munis_consum)[,vars_to_select]
+  df <- df[,num_cols]
+  ct <- cor(df)
   corrplot::corrplot(ct, method = "color", type = "lower", title = "Matriu de correlació")
 }
 
