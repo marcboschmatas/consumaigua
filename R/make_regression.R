@@ -8,10 +8,10 @@
 #' \dontrun{
 #' make_regression(x = c("hotels_1000hab", "vab_relatiu_Agricultura", "piscines_1000hab"), y = "consum_total")
 #' }
-#' @import ggplot2 theme_minimal
-#' @import broom glance
-#' @import sjPlot plot_model
-#' @import ggplot2 labs
+#' @importFrom ggplot2 theme_minimal
+#' @importFrom broom glance
+#' @importFrom sjPlot plot_model
+#' @importFrom ggplot2 labs
 #' @export
 make_regression <- function(x, y, model = "linear"){
   stopifnot(model %in% c("linear", "logit"))

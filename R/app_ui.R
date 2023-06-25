@@ -3,18 +3,21 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import shinydashboard
+#' @importFrom shinycssloaders withSpinner
+#' @importFrom DT DTOutput
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    dashboardPage(
-      dashboardHeader(title = "Determinants del consum d'aigua", dropdownMenuOutput("msgOutput")),
-      dashboardSidebar(
+    shinydashboard::dashboardPage(
+      shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua", dropdownMenuOutput("msgOutput")),
+      shinydashboard::dashboardSidebar(
         out = h5("Blablablablablablabla")),
 
-      dashboardBody(
+      shinydashboard::dashboardBody(
         fluidPage(
           box(
             selectInput(
@@ -57,8 +60,15 @@ app_ui <- function(request) {
             width = "3",
             status = "primary",
             title = "Variable dependent"
+          ),
+          box(
+            selectInput("model", label = "Trieu model:",
+                        choices = c("linear", "logit")),
+            solidHeader = TRUE,
+            width = "3",
+            status = "primary",
+            title = "Model"
           )
-
 
 
         ),
@@ -71,20 +81,20 @@ app_ui <- function(request) {
             width = 12,
 
             tabPanel("Correlacions",
-                     box(withSpinner(plotOutput(
+                     box(shinycssloaders::withSpinner(plotOutput(
                        "Corr"
                      )), width = 12)),
             tabPanel("Mapes",
-                     box(withSpinner(plotOutput(
+                     box(shinycssloaders::withSpinner(plotOutput(
                        "Maps"
                      )), width = 12)),
             tabPanel("Coeficients",
-                     box(withSpinner(plotOutput(
+                     box(shinycssloaders::withSpinner(plotOutput(
                        "Coefs"
                      )), width = 12)),
             #box(withSpinner(verbatimTextOutput("CorrMatrix")), width = 12),
-          tabPanel("Estadístics model",
-                   box(withSpinner(DTOutput(
+          tabPanel("Stats",
+                   box(shinycssloaders::withSpinner(DT::DTOutput(
                      "Glance"
                    )), width = 12))
             ),
