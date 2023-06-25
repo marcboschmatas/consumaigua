@@ -17,3 +17,9 @@ a faceted choropleth map
 \description{
 makes choropleth maps with all variables of interest
 }
+\examples{
+\dontrun{
+make_plots(c("hotels_1000hab", "vab_relatiu_Agricultura", "renda_capita"), "consum_total")
+}
+
+}

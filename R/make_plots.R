@@ -2,6 +2,11 @@
 #' @description makes choropleth maps with all variables of interest
 #' @param x a character vector with all independent variables
 #' @param y y a character vector with the dependent variable of interest
+#' @examples
+#' \dontrun{
+#' make_plots(c("hotels_1000hab", "vab_relatiu_Agricultura", "renda_capita"), "consum_total")
+#' }
+#'
 #' @importFrom tmap tm_shape
 #' @importFrom tmap tm_borders
 #' @importFrom tmap tm_layout
