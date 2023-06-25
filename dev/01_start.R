@@ -44,7 +44,7 @@ devtools::build_readme()
 # If your {usethis} version is older, you can remove that param
 
 usethis::use_lifecycle_badge("Experimental")
-usethis::use_news_md(open = FALSE)
+
 
 ## Use git ----
 usethis::use_git()
