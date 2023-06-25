@@ -8,10 +8,6 @@
 #' \dontrun{
 #' make_regression(x = c("hotels_1000hab", "vab_relatiu_Agricultura", "piscines_1000hab"), y = "consum_total")
 #' }
-#' @importFrom ggplot2 theme_minimal
-#' @importFrom broom glance
-#' @importFrom sjPlot plot_model
-#' @importFrom ggplot2 labs
 #' @export
 make_regression <- function(x, y, model = "linear"){
   stopifnot(model %in% c("linear", "logit"))
@@ -19,16 +15,7 @@ make_regression <- function(x, y, model = "linear"){
   f <- as.formula(paste(y, "~",paste(x, collapse="+")))
   if(model == "linear") mod <- lm(f, data = consumaigua::munis_consum)
   else mod <- glm(f, data = consumaigua::munis_consum, family = binomial(link = "logit"))
-  gl <- broom::glance(mod)
-  pl <- sjPlot::plot_model(mod,
-                           show.values = TRUE,
-                           show.intercept = TRUE,
-                           vline.color = "black",
-                           ci.lvl = .95) +
-    ggplot2::theme_minimal()
-    ggplot2::labs(title = "Coeficients",
-                  caption = "Interval de confiança 95%")
-  return(list(glance = gl, coef_plot = pl))
+  return(mod)
 }
 
 

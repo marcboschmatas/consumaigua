@@ -4,18 +4,27 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @importFrom DT renderDataTable
+#' @importFrom broom glance
+#' @importFrom sjPlot plot_model
+#' @importFrom ggplot2 theme_minimal
+#' @importFrom ggplot2 labs
 #' @noRd
 app_server <- function(input, output, session) {
 
-  cormat <- reactive({
-    consumaigua::make_corrplot(x = input$varind, y = input$vardep)
-  })
-  output$Correlacions <- renderPlot(cormat)
+  output$Correlacions <- renderPlot(reactive({
+    consumaigua::make_corrplot(x = input$varind, y = input$vardep)}))
 
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
-  output$Coeficients <- renderPlot(mod$coef_plot)
+  output$Coeficients <- renderPlot(sjPlot::plot_model(mod,
+                                                      show.values = TRUE,
+                                                      show.intercept = TRUE,
+                                                      vline.color = "black",
+                                                      ci.lvl = .95) +
+                                     ggplot2::theme_minimal() +
+                                     ggplot2::labs(title = "Coeficients",
+                                                 caption = "Interval de confiança 95%"))
 
-  output$Stats <- DT::renderDataTable(mod$glance)
+  output$Stats <- DT::renderDataTable(broom::glance(mod))
 
   # mapes <- reactive({consumaigua::make_plots(x = input$varind, y = input$vardep)})
   #
