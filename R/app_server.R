@@ -17,9 +17,9 @@ app_server <- function(input, output, session) {
 
   output$Stats <- DT::renderDataTable(mod$glance)
 
-  mapes <- reactive({consumaigua::make_plots(x = input$varind, y = input$vardep)})
-
-  output$Mapes <- renderPlot(mapes)
+  # mapes <- reactive({consumaigua::make_plots(x = input$varind, y = input$vardep)})
+  #
+  # output$Mapes <- renderPlot(mapes)
 
 
 }

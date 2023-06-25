@@ -31,15 +31,7 @@ app_ui <- function(request) {
                           "piscines_1000hab", "hotels_1000hab","su_cases_aillades",
                           "su_cases_agrupades", "area_muni", "pct_su_cases_aillades",
                           "pct_su_cases_agrupades"),
-              multiple = TRUE,
-              selected = c("n_hotel", "n_piscines", "vab_relatiu_Agricultura",
-                           "vab_relatiu_Indústria", "vab_relatiu_Construcció",
-                           "vab_relatiu_Serveis", "vab_absolut_Agricultura",
-                           "vab_absolut_Indústria", "vab_absolut_Construcció",
-                           "vab_absolut_Serveis", "vab_absolut_Total", "poblacio",
-                           "piscines_1000hab", "hotels_1000hab","su_cases_aillades",
-                           "su_cases_agrupades", "area_muni", "pct_su_cases_aillades",
-                           "pct_su_cases_agrupades")
+              multiple = TRUE
             ),
             solidHeader = TRUE,
             width = "3",
@@ -74,7 +66,6 @@ app_ui <- function(request) {
         ),
 
         fluidPage(
-
           tabBox(
             id = "tabset1",
             height = "1000px",
@@ -84,10 +75,10 @@ app_ui <- function(request) {
                      box(shinycssloaders::withSpinner(plotOutput(
                        "Corr"
                      )), width = 12)),
-            tabPanel("Mapes",
-                     box(shinycssloaders::withSpinner(plotOutput(
-                       "Maps"
-                     )), width = 12)),
+            # tabPanel("Mapes",
+            #          box(shinycssloaders::withSpinner(plotOutput(
+            #            "Maps"
+            #          )), width = 12)),
             tabPanel("Coeficients",
                      box(shinycssloaders::withSpinner(plotOutput(
                        "Coefs"
@@ -98,7 +89,7 @@ app_ui <- function(request) {
                      "Glance"
                    )), width = 12))
             ),
-            #textOutput("correlation_accuracy"),
+          textOutput("correlation_accuracy"),
           )
         )
       )
