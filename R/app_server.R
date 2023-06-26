@@ -14,7 +14,7 @@ app_server <- function(input, output, session) {
   output$Corr <- renderPlot({
     consumaigua::make_corrplot(x = input$varind, y = input$vardep)
   })
-  output$Maps <- renderPlot({consumaigua::make_plots(x = input$varind, y = input$vardep)})
+  #output$Maps <- renderPlot({consumaigua::make_plots(x = input$varind, y = input$vardep)})
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
   output$Coefs <- renderPlot(sjPlot::plot_model(mod(), # això ho tinc zero clar
                                                       show.values = TRUE,
