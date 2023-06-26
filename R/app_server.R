@@ -11,8 +11,14 @@
 #' @noRd
 app_server <- function(input, output, session) {
 
-  output$Corr <- renderPlot(reactive({
-    consumaigua::make_corrplot(x = input$varind, y = input$vardep)}))
+  output$Corr <- renderUI({
+    plot <- consumaigua::make_corrplot(x = input$varind, y = input$vardep)
+    plotOutput("corrPlot", height = "400px")
+  })
+
+  output$corrPlot <- renderPlot({
+    consumaigua::make_corrplot(x = input$varind, y = input$vardep)
+  })
 
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
   output$Coefs <- renderPlot(sjPlot::plot_model(mod(), # això ho tinc zero clar
