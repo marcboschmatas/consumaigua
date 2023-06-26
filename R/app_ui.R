@@ -14,8 +14,8 @@ app_ui <- function(request) {
     # Your application UI logic
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua"),
-     # shinydashboard::dashboardSidebar(
-      #  out = h5("En aquesta app es poden simular models de regressió per a determinar l'impacte de diversos factors de tipus econòmic o geogràfic en el consum d'aigua dels municipis catalans a les conques internes")),
+      shinydashboard::dashboardSidebar(
+        out = h5("Blablablablablablabla")),
 
       shinydashboard::dashboardBody(
         fluidPage(
