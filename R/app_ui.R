@@ -13,7 +13,7 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     shinydashboard::dashboardPage(
-      shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua", dropdownMenuOutput("msgOutput")),
+      shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua"),
       shinydashboard::dashboardSidebar(
         out = h5("Blablablablablablabla")),
 
