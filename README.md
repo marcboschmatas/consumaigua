@@ -32,10 +32,12 @@ devtools::install_github("marcboschmatas/consumaigua")
 ## Dades
 
 El paquet conté tres objectes de dades. El procés de neteja i les dades
-originals s’han tramès per separat a través del campus virtual. \###
-basemap `basemap` és un objecte `stars` amb un mapa base de Catalunya
+originals s’han tramès per separat a través del campus virtual.
+
+### basemap
+`basemap` és un objecte `stars` amb un mapa base de Catalunya
 obtingut d’openstreetmap. Serveix per a contextualitzar els mapes de
-coropleta.
+coropleta. No s'utilitza en la primera versió de l'app fins que no es pugui resoldre el llarg temps de càrrega.
 
 ### cat
 
