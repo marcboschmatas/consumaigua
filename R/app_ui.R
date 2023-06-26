@@ -14,8 +14,8 @@ app_ui <- function(request) {
     # Your application UI logic
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua"),
-      shinydashboard::dashboardSidebar(
-        out = h5("Blablablablablablabla")),
+      #shinydashboard::dashboardSidebar(
+       # out = h5("Blablablablablablabla")),
 
       shinydashboard::dashboardBody(
         fluidPage(
