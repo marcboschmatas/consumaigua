@@ -19,6 +19,8 @@ visualitzar aquestes anàlisis. D’una banda, permet crear mapes i gràfics
 de dispersió per a comparar diferents variables d’interès i de l’altra,
 construir models de regressió per a analitzar-ne l’impacte.
 
+L'app s'ha desenvolupat amb el framework [golem](https://thinkr-open.github.io/golem/) i està inspirada en les apps següents: [Interactive-Modelling-With-Shiny](https://github.com/amitvkulkarni/Interactive-Modelling-with-Shiny) i [shiny-regression](https://github.com/altaf-ali/shiny-regression).
+
 ## Instal·lació
 
 Us podeu instal·lar el paquet de la manera següent.
@@ -52,6 +54,7 @@ Conté les variables següents.
 - municipi: codi de sis xifres del municipi (Idescat)
 - codiine: codi de cinc xifres del municipi (Idescat)
 - nom_muni: nom del municipi (Idescat)
+
 **Variables d'outcome**
 - nom_comarca: nom de la comarca a la qual pertany el municipi (Idescat)
 - consum_total: mitjana de la dotació per habitant i dia al municipi
@@ -86,7 +89,8 @@ Conté les variables següents.
   estat superior a 250 litres per persona i dia (ACA).
 - mes_250_hivern: variable dicotòmica que indica si `consum_hivern` ha
   estat superior a 250 litres per persona i dia (ACA).
-  **Variables predictores**
+  
+**Variables predictores**
 - n_hotel: número d’hotels al municipi (Openstreetmap)
 - n_piscines: número de piscines, públiques i privades, al municipi
   (Openstreetmap)
@@ -137,4 +141,9 @@ El paquet compta amb tres funcions que després s'implementen en l'app de shiny.
 - make_corrplot: elabora un gràfic de correlació amb les variables seleccionades.
 - make_plots: elabora mapes coropleta dels municipis amb dades de totes les variables seleccionades. PENDENT DE REVISAR PER A OPTIMITZAR-NE LA VELOCITAT.
 - make_regression: elabora un model de regressió linear o logística.
+
+## app
+
+EN PROCÉS
+L'app permet consultar les correlacions entre les variables estudiades i els resultats del model de relació: coeficient i principals estadístics de diagnòstics. Està desenvolupada en els arxius ```R/ui.R``` i ```R/server.R```
 
