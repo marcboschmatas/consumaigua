@@ -72,7 +72,7 @@ app_ui <- function(request) {
             width = 12,
 
             tabPanel("Correlacions",
-                     box(shinycssloaders::withSpinner(shiny::imageOutput("Corr", height = "400px")),
+                     box(shinycssloaders::withSpinner(shiny::imageOutput("Corr", height = "400px")))),
             # tabPanel("Mapes",
             #          box(shinycssloaders::withSpinner(plotOutput(
             #            "Maps"
