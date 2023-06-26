@@ -13,13 +13,12 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     shinydashboard::dashboardPage(
-      #shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua"),
+      shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua"),
       #shinydashboard::dashboardSidebar(
        # out = h5("Blablablablablablabla")),
 
       shinydashboard::dashboardBody(
         fluidPage(
-          h1("Determinants del consum d'aigua als municipis de les conques internes de Catalunya"),
           box(
             selectInput(
               "varind",
