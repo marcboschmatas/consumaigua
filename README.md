@@ -111,24 +111,24 @@ Conté les variables següents.
   2020 (Idescat).
 - vab_relatiu_Serveis: percentatge que suposa el VAB del sector serveis
   en la comarca on s’ubica el municipi sobre el total el 2020 (Idescat).
-  vab_absolut_Agricultura: VAB del sector primari en milions d’euros a
+- vab_absolut_Agricultura: VAB del sector primari en milions d’euros a
   la comarca on s’ubica el municipi el 2020 (Idescat).
-  -vab_absolut_Indústria: VAB del sector industrial en milions d’euros a
+- vab_absolut_Indústria: VAB del sector industrial en milions d’euros a
   la comarca on s’ubica el municipi el 2020 (Idescat).
-  - vab_absolut_Construcció: VAB del sector de la construcció en milions
+- vab_absolut_Construcció: VAB del sector de la construcció en milions
   d’euros a la comarca on s’ubica el municipi el 2020 (Idescat).
-  - vab_absolut_Serveis: VAB del sector serveis en milions d’euros a la
+- vab_absolut_Serveis: VAB del sector serveis en milions d’euros a la
   comarca on s’ubica el municipi el 2020 (Idescat).
 - su_cases_agrupades:
   superfície del sòl urbanitzable en clau R5 (cases agrupades) en
   hectàrees el 2022 (Generalitat).
-  - su_cases_aïllades: superfície del
+- su_cases_aïllades: superfície del
   sòl urbanitzable en clau R6 (cases aïllades o adossades) en hectàrees
   el 2022 (Generalitat).
 - pct_su_cases_agrupades: percentatge que suposa
   la superfície del sòl urbanitzable en clau R5 sobre la superfície
   municipal total (Generalitat).
-  - pct_su_cases_aillades; percentatge que
+- pct_su_cases_aillades; percentatge que
   suposa la superfície del sòl urbanitzable en clau R6 sobre la
   superfície municipal total (Generalitat).
 - geom: geometria vectorial
