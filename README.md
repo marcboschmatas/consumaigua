@@ -48,9 +48,11 @@ les conques internes de Catalunya amb dades de consum d’aigua per, com a
 mínim, 9 dels dotze mesos amb dades (juny de 2022 fins a maig de 2023).
 Conté les variables següents.
 
+**Variables d'identificació**
 - municipi: codi de sis xifres del municipi (Idescat)
 - codiine: codi de cinc xifres del municipi (Idescat)
 - nom_muni: nom del municipi (Idescat)
+**Variables d'outcome**
 - nom_comarca: nom de la comarca a la qual pertany el municipi (Idescat)
 - consum_total: mitjana de la dotació per habitant i dia al municipi
   entre juny de 2022 i maig de 2023 (ACA).
@@ -84,6 +86,7 @@ Conté les variables següents.
   estat superior a 250 litres per persona i dia (ACA).
 - mes_250_hivern: variable dicotòmica que indica si `consum_hivern` ha
   estat superior a 250 litres per persona i dia (ACA).
+  **Variables predictores**
 - n_hotel: número d’hotels al municipi (Openstreetmap)
 - n_piscines: número de piscines, públiques i privades, al municipi
   (Openstreetmap)
@@ -108,20 +111,30 @@ Conté les variables següents.
   la comarca on s’ubica el municipi el 2020 (Idescat).
   -vab_absolut_Indústria: VAB del sector industrial en milions d’euros a
   la comarca on s’ubica el municipi el 2020 (Idescat).
-  -vab_absolut_Construcció: VAB del sector de la construcció en milions
+  - vab_absolut_Construcció: VAB del sector de la construcció en milions
   d’euros a la comarca on s’ubica el municipi el 2020 (Idescat).
-  -vab_absolut_Serveis: VAB del sector serveis en milions d’euros a la
-  comarca on s’ubica el municipi el 2020 (Idescat). -su_cases_agrupades:
+  - vab_absolut_Serveis: VAB del sector serveis en milions d’euros a la
+  comarca on s’ubica el municipi el 2020 (Idescat).
+- su_cases_agrupades:
   superfície del sòl urbanitzable en clau R5 (cases agrupades) en
-  hectàrees el 2022 (Generalitat). -su_cases_aïllades: superfície del
+  hectàrees el 2022 (Generalitat).
+  - su_cases_aïllades: superfície del
   sòl urbanitzable en clau R6 (cases aïllades o adossades) en hectàrees
-  el 2022 (Generalitat). -pct_su_cases_agrupades: percentatge que suposa
+  el 2022 (Generalitat).
+- pct_su_cases_agrupades: percentatge que suposa
   la superfície del sòl urbanitzable en clau R5 sobre la superfície
-  municipal total (Generalitat). -pct_su_cases_aillades; percentatge que
+  municipal total (Generalitat).
+  - pct_su_cases_aillades; percentatge que
   suposa la superfície del sòl urbanitzable en clau R6 sobre la
-  superfície municipal total (Generalitat). -geom: geometria vectorial
+  superfície municipal total (Generalitat).
+- geom: geometria vectorial
   del municipi.
 
 ## Funcions
 
-PENDENT
+El paquet compta amb tres funcions que després s'implementen en l'app de shiny.
+
+- make_corrplot: elabora un gràfic de correlació amb les variables seleccionades.
+- make_plots: elabora mapes coropleta dels municipis amb dades de totes les variables seleccionades. PENDENT DE REVISAR PER A OPTIMITZAR-NE LA VELOCITAT.
+- make_regression: elabora un model de regressió linear o logística.
+
