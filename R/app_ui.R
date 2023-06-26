@@ -73,10 +73,10 @@ app_ui <- function(request) {
 
             tabPanel("Correlacions",
                      box(shinycssloaders::withSpinner(plotOutput("Corr", height = "400px")))),
-            # tabPanel("Mapes",
-            #          box(shinycssloaders::withSpinner(plotOutput(
-            #            "Maps"
-            #          )), width = 12)),
+             tabPanel("Mapes",
+                      box(shinycssloaders::withSpinner(plotOutput(
+                        "Maps"
+                      )), width = 12)),
             tabPanel("Coeficients",
                      box(shinycssloaders::withSpinner(plotOutput(
                        "Coefs"
