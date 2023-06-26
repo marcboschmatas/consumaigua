@@ -15,7 +15,7 @@ app_server <- function(input, output, session) {
     consumaigua::make_corrplot(x = input$varind, y = input$vardep)}))
 
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
-  output$Coefs <- renderPlot(sjPlot::plot_model(mod,
+  output$Coefs <- renderPlot(sjPlot::plot_model(mod(), # això ho tinc zero clar
                                                       show.values = TRUE,
                                                       show.intercept = TRUE,
                                                       vline.color = "black",
@@ -24,7 +24,7 @@ app_server <- function(input, output, session) {
                                      ggplot2::labs(title = "Coeficients",
                                                  caption = "Interval de confiança 95%"))
 
-  output$Glance <- DT::renderDataTable(broom::glance(mod))
+  output$Glance <- DT::renderDataTable(broom::glance(mod()))
 
   # mapes <- reactive({consumaigua::make_plots(x = input$varind, y = input$vardep)})
   #
