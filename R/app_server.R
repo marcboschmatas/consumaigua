@@ -27,7 +27,7 @@ app_server <- function(input, output, session) {
 
   output$Glance <- DT::renderDataTable(broom::glance(mod()))
 
-  output$Mapes <- renderPlot({consumaigua::make_plots(x = input$varind, y = input$vardep)})
+  output$Maps <- renderPlot({consumaigua::make_plots(x = input$varind, y = input$vardep)})
 
 
 }
