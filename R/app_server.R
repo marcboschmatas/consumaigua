@@ -11,13 +11,9 @@
 #' @noRd
 app_server <- function(input, output, session) {
 
-  output$Corr <- renderImage({
-    filename <- tempfile(fileext = ".png")
-    png(filename)
+  output$Corr <- renderPlot({
     consumaigua::make_corrplot(x = input$varind, y = input$vardep)
-    dev.off()
-    list(src = filename, alt = "Correlation Plot")
-  }, deleteFile = TRUE)
+  })
 
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
   output$Coefs <- renderPlot(sjPlot::plot_model(mod(), # això ho tinc zero clar
