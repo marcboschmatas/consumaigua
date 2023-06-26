@@ -19,7 +19,7 @@ app_ui <- function(request) {
 
       shinydashboard::dashboardBody(
         fluidPage(
-          h1("Determinants del consum d'aigua als municipis de les conques internes de Catalunya")
+          h1("Determinants del consum d'aigua als municipis de les conques internes de Catalunya"),
           box(
             selectInput(
               "varind",
