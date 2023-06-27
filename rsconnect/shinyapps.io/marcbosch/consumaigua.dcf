@@ -1,0 +1,13 @@
+name: consumaigua
+title: consumaigua
+username:
+account: marcbosch
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9374414
+bundleId: 7394713
+url: https://marcbosch.shinyapps.io/consumaigua/
+when: 1687895522.55981
+lastSyncTime: 1687895522.55982
+asMultiple: FALSE
+asStatic: FALSE
