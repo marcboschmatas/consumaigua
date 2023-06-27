@@ -31,7 +31,7 @@ devtools::install_github("marcboschmatas/consumaigua")
 
 ## Dades
 
-El paquet conté tres objectes de dades. Podeu consultar les dades en brut [aquí](https://doi.org/10.6084/m9.figshare.c.6712686.v1) i el script utilitzat per a descarregar-les, netejar-les i preparar-les és AQUÍ ENLLAÇ
+El paquet conté tres objectes de dades. Podeu consultar les dades en brut [aquí](https://doi.org/10.6084/m9.figshare.c.6712686.v1) i el script utilitzat per a descarregar-les, netejar-les i preparar-les és [aquest](https://github.com/marcboschmatas/consumaigua/blob/master/R/01_data_obtention_treatment.R)
 
 ### basemap
 `basemap` és un objecte `stars` amb un mapa base de Catalunya
