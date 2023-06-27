@@ -85,7 +85,7 @@ app_ui <- function(request) {
                         "Maps"
                       )), width = 12)),
             tabPanel("Coeficients",
-                     box(shinycssloaders::withSpinner(plotOutput(
+                     box(shinycssloaders::withSpinner(DT::DTOutput(
                        "Coefs"
                      )), width = 12,
                      height = 12)),
