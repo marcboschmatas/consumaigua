@@ -14,12 +14,12 @@ app_ui <- function(request) {
     # Your application UI logic
     shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(title = "Determinants del consum d'aigua a les conques internes",titleWidth = 600),
-      dashboardSidebar(disable = TRUE),
+      shinydashboard::dashboardSidebar(disable = TRUE),
 
       shinydashboard::dashboardBody(
-        fluidPage(
-          box(
-            selectInput(
+        shiny::fluidPage(
+          shinydashboard::box(
+            shiny::selectInput(
               "varind",
               label = "Trieu variables:",
               choices = c("n_hotel", "n_piscines", "vab_relatiu_Agricultura",
@@ -37,8 +37,8 @@ app_ui <- function(request) {
             status = "primary",
             title = "Variables independents"
           ),
-          box(
-            selectInput("vardep", label = "Trieu variable:",
+          shinydashboard::box(
+            shiny::selectInput("vardep", label = "Trieu variable:",
                         choices = c("consum_total", "consum_primavera",
                                     "consum_hivern", "consum_estiu",
                                     "consum_tardor", "mes_400_total",
@@ -52,8 +52,8 @@ app_ui <- function(request) {
             status = "primary",
             title = "Variable dependent"
           ),
-          box(
-            selectInput("model", label = "Trieu model:",
+          shinydashboard::box(
+            shiny::selectInput("model", label = "Trieu model:",
                         choices = c("linear", "logit")),
             solidHeader = TRUE,
             width = "3",
@@ -64,40 +64,41 @@ app_ui <- function(request) {
 
         ),
 
-        fluidPage(
-          tabBox(
+        shiny::fluidPage(
+          shinydashboard::tabBox(
             id = "tabset1",
             height = "2000px",
             width = 12,
-            tabPanel("Introducció",
-                     box(h5("Aquesta aplicació permet crear models de regressió per a explicar el consum d'aigua als municipis de les conques internes en situació de prealerta, alerta o excepcionalitat per sequera.\n
+            shinydashboard::tabPanel("Introducció",
+                                     shinydashboard::box(
+                                     shiny::h5("Aquesta aplicació permet crear models de regressió per a explicar el consum d'aigua als municipis de les conques internes en situació de prealerta, alerta o excepcionalitat per sequera.\n
                             Per a fer-ho, s'utilitzen variables vinculades a la renda, l'activitat econòmica, l'urbanisme o l'activitat turística"),
                          shiny::hr(),
                          shiny::a(href = "https://github.com/marcboschmatas/consumaigua",
                                   "Podeu trobar una descripció més detallada de les variables al repositori GitHub de l'app"),
-                         h5("Així, el model permet seleccionar una sèrie de variables dependents, una variable independent i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable independent tingui valors únics 0 i 1)"),
-                         hr(),
-                         h5("La pestanya Correlacions presenta un gràfic de correlació entre totes les variables seleccionades. La pestanya Mapes presenta un mapa coropleta per a tots els municipis amb dades i cada variable. La pestanya Ccoeficients presenta els coeficients del model de forma gràfica. La pestanya Resum model, els principals estadístics i els gràfics de diagnòstic"))),
-            tabPanel("Correlacions",
-                     box(shinycssloaders::withSpinner(plotOutput("Corr")))),
-             tabPanel("Mapes",
-                      box(shinycssloaders::withSpinner(plotOutput(
+                         shiny::h5("Així, el model permet seleccionar una sèrie de variables dependents, una variable independent i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable independent tingui valors únics 0 i 1)"),
+                         shiny::hr(),
+                         shiny::h5("La pestanya Correlacions presenta un gràfic de correlació entre totes les variables seleccionades. La pestanya Mapes presenta un mapa coropleta per a tots els municipis amb dades i cada variable. La pestanya Ccoeficients presenta els coeficients del model de forma gràfica. La pestanya Resum model, els principals estadístics i els gràfics de diagnòstic"))),
+            shinydashboard::tabPanel("Correlacions",
+                                     shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput("Corr")))),
+            shinydashboard::tabPanel("Mapes",
+                                     shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput(
                         "Maps"
                       )), width = 12)),
-            tabPanel("Coeficients",
-                     box(shinycssloaders::withSpinner(DT::DTOutput(
+            shinydashboard::tabPanel("Coeficients",
+                                     shinydashboard::box(shinycssloaders::withSpinner(DT::DTOutput(
                        "Coefs"
                      )), width = 12,
                      height = 12)),
             #box(withSpinner(verbatimTextOutput("CorrMatrix")), width = 12),
-          tabPanel("Resum model",
-                   box(shinycssloaders::withSpinner(DT::DTOutput(
+            shinydashboard::tabPanel("Resum model",
+                                     shinydashboard::box(shinycssloaders::withSpinner(DT::DTOutput(
                      "Glance"
                    )), width = 12),
-                   hr(),
-                   box(shinycssloaders::withSpinner(plotOutput("Diagnose"))))
+                   shiny::hr(),
+                   shinydashboard::box(shinycssloaders::withSpinner(plotOutput("Diagnose"))))
             ),
-          textOutput("correlation_accuracy"),
+          shiny::textOutput("correlation_accuracy"),
           )
         )
       )
