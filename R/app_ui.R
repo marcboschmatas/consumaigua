@@ -69,7 +69,7 @@ app_ui <- function(request) {
             id = "tabset1",
             height = "2000px",
             width = 12,
-            shinydashboard::tabPanel("Introducció",
+            shiny::tabPanel("Introducció",
                                      shinydashboard::box(
                                      shiny::h5("Aquesta aplicació permet crear models de regressió per a explicar el consum d'aigua als municipis de les conques internes en situació de prealerta, alerta o excepcionalitat per sequera.\n
                             Per a fer-ho, s'utilitzen variables vinculades a la renda, l'activitat econòmica, l'urbanisme o l'activitat turística"),
