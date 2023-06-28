@@ -19,9 +19,11 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-Aquest paquet té com a objectiu generar funcions per a analitzar l'impacte de factors urbanístics i econòmics en el consum d'aigua als municipis de les conques internes de Catalunya entre juny de 2022 i maig de 2023 en el marc del projecte final del Postgrau d'Anàlisi de dades per a l'anàlisi política i la gestió pública (UB). Aquestes funcions donen suport a l'app de shiny APP AQUÍ QUAN ESTIGUI LLESTA que permet visualitzar aquestes anàlisis. D'una banda, permet crear mapes i gràfics de dispersió per a comparar diferents variables d'interès i de l'altra, construir models de regressió per a analitzar-ne l'impacte.
+Aquest paquet té com a objectiu generar funcions per a analitzar l'impacte de factors urbanístics i econòmics en el consum d'aigua als municipis de les conques internes de Catalunya entre juny de 2022 i maig de 2023 en el marc del projecte final del Postgrau d'Anàlisi de dades per a l'anàlisi política i la gestió pública (UB). Aquestes funcions donen suport a la següent [app de shiny](https://marcbosch.shinyapps.io/consumaigua/) que permet visualitzar aquestes anàlisis. D'una banda, permet crear mapes i gràfics de dispersió per a comparar diferents variables d'interès i de l'altra, construir models de regressió per a analitzar-ne l'impacte.
 
+## App
 
+[L'app de shiny](https://marcbosch.shinyapps.io/consumaigua/), generada utilitzant el framework [golem](https://thinkr-open.github.io/golem/), permet dissenyar un model de regressió per a analitzar els determinants del consum d'aigua dels 532 municipis amb dades de les conques internes de Catalunya, observar les correlacions entre les variables estudiades, representar-les amb mapes coropleta i estudiar els coeficients i principals estadístics del model de regressió. Està inspirada en la següent [app](https://github.com/amitvkulkarni/Interactive-Modelling-with-Shiny/tree/main).
 
 ## Instal·lació
 
@@ -29,7 +31,12 @@ Us podeu instal·lar el paquet de la manera següent.
 ``` r
 devtools::install_github("marcboschmatas/consumaigua")
 ```
+Per a córrer l'app en local, podeu fer-ho de la manera següent.
 
+``` r
+library(consumaigua)
+run_app()
+```
 
 ## Dades
 
@@ -88,4 +95,5 @@ vab_absolut_Agricultura: VAB del sector primari en milions d'euros a la comarca 
 
 ## Funcions
 
-PENDENT
+El paquet té quatre funcions orientades a generar els continguts de l'app (un gràfic de correlacions, una sèrie de mapes coropleta que representin les variables escollides, un model de regressió i gràfics de diagnòstic del model) i una funció destinada a inicialitzar-la en local.
+

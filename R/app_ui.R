@@ -76,22 +76,22 @@ app_ui <- function(request) {
                          shiny::hr(),
                          shiny::a(href = "https://github.com/marcboschmatas/consumaigua",
                                   "Podeu trobar una descripció més detallada de les variables al repositori GitHub de l'app"),
-                         shiny::h5("Així, el model permet seleccionar una sèrie de variables dependents, una variable independent i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable independent tingui valors únics 0 i 1)"),
+                         shiny::h5("Així, el model permet seleccionar una sèrie de variables explicatives, una variable d'interès i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable independent tingui valors únics 0 i 1)"),
                          shiny::hr(),
                          shiny::h5("La pestanya Correlacions presenta un gràfic de correlació entre totes les variables seleccionades. La pestanya Mapes presenta un mapa coropleta per a tots els municipis amb dades i cada variable. La pestanya Ccoeficients presenta els coeficients del model de forma gràfica. La pestanya Resum model, els principals estadístics i els gràfics de diagnòstic"))),
-            shinydashboard::tabPanel("Correlacions",
+            shiny::tabPanel("Correlacions",
                                      shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput("Corr")))),
-            shinydashboard::tabPanel("Mapes",
+            shiny::tabPanel("Mapes",
                                      shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput(
                         "Maps"
                       )), width = 12)),
-            shinydashboard::tabPanel("Coeficients",
+            shiny::tabPanel("Coeficients",
                                      shinydashboard::box(shinycssloaders::withSpinner(DT::DTOutput(
                        "Coefs"
                      )), width = 12,
                      height = 12)),
             #box(withSpinner(verbatimTextOutput("CorrMatrix")), width = 12),
-            shinydashboard::tabPanel("Resum model",
+            shiny::tabPanel("Resum model",
                                      shinydashboard::box(shinycssloaders::withSpinner(DT::DTOutput(
                      "Glance"
                    )), width = 12),
