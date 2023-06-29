@@ -5,7 +5,7 @@ account: marcbosch
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9374669
-bundleId: 7398760
+bundleId: 7402181
 url: https://marcbosch.shinyapps.io/consumaigua/
-when: 1687972653.3287
-lastSyncTime: 1687972653.32871
+when: 1688048905.5803
+lastSyncTime: 1688048905.58032
