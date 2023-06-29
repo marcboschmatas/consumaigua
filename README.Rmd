@@ -40,9 +40,13 @@ run_app()
 
 ## Dades
 
-El paquet conté tres objectes de dades. El procés de neteja i les dades originals s'han tramès per separat a través del campus virtual. 
+El paquet conté tres objectes de dades. El procés de neteja i les dades originals s'han tramès per separat a través del campus virtual.
+
+Es poden trobar les dades originals [aquí](https://doi.org/10.6084/m9.figshare.c.6712686.v1). S'ha utilitzat el següent [script]() per a obtenir-les i realitzar el primer tractament.
+
 ### basemap
-```basemap``` és un objecte ```stars``` amb un mapa base de Catalunya obtingut d'openstreetmap. Serveix per a contextualitzar els mapes de coropleta.
+
+```basemap``` és un objecte ```stars``` amb un mapa base de Catalunya obtingut d'openstreetmap. Serveix per a contextualitzar els mapes de coropleta. NOTA: no s'ha utilitzat pel temps excessiu de càrrega.
 
 
 ### cat
