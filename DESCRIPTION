@@ -1,6 +1,6 @@
 Package: consumaigua
 Title: Determinants del consum d'aigua a les conques internes
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: person('Marc', 'Bosch Matas', email = 'mboschmatas@gmail.com', role = c('cre', 'aut'))
 Description: PKG_DESC.
 License: MIT + file LICENSE
