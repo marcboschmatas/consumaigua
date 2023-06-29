@@ -25,7 +25,7 @@ app_server <- function(input, output, session) {
   output$Maps <- renderPlot({consumaigua::make_plots(x = input$varind, y = input$vardep)})
   mod <- reactive({consumaigua::make_regression(x = input$varind, y = input$vardep, model = input$model)})
   output$Coefs <- DT::renderDataTable(DT::formatRound(DT::datatable(broom::tidy(mod())),
-                                                      columns = 2:5, digits = 2))
+                                                      columns = 2:5, digits = 3))
 
   output$Glance <- DT::renderDataTable(DT::formatRound(DT::datatable(broom::glance(mod())),
                                                        columns = purrr::map_lgl(broom::glance(mod()), is.numeric), digits = 2))

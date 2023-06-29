@@ -35,7 +35,7 @@ app_ui <- function(request) {
             solidHeader = TRUE,
             width = "3",
             status = "primary",
-            title = "Variables independents"
+            title = "Variables explicatives"
           ),
           shinydashboard::box(
             shiny::selectInput("vardep", label = "Trieu variable:",
@@ -50,7 +50,7 @@ app_ui <- function(request) {
             solidHeader = TRUE,
             width = "3",
             status = "primary",
-            title = "Variable dependent"
+            title = "Variable d'interès"
           ),
           shinydashboard::box(
             shiny::selectInput("model", label = "Trieu model:",
@@ -76,15 +76,21 @@ app_ui <- function(request) {
                          shiny::hr(),
                          shiny::a(href = "https://github.com/marcboschmatas/consumaigua",
                                   "Podeu trobar una descripció més detallada de les variables al repositori GitHub de l'app"),
-                         shiny::h5("Així, el model permet seleccionar una sèrie de variables explicatives, una variable d'interès i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable independent tingui valors únics 0 i 1)"),
+                         shiny::h5("Així, el model permet seleccionar una sèrie de variables explicatives, una variable d'interès i un tipus de model: lineal o logístic (aquest darrer només funcionarà en cas que la variable d'interès tingui valors únics 0 i 1). Totes les variables d'interès no dicotòmiques estan expressades en litres per persona i dia"),
+                         shiny::hr(),
+                         shiny::h5("Com a limitació de l'estudi, cal destacar que no es disposa de dades prou detallades de fuites d'aigua per municipis"),
                          shiny::hr(),
                          shiny::h5("La pestanya Correlacions presenta un gràfic de correlació entre totes les variables seleccionades. La pestanya Mapes presenta un mapa coropleta per a tots els municipis amb dades i cada variable. La pestanya Ccoeficients presenta els coeficients del model de forma gràfica. La pestanya Resum model, els principals estadístics i els gràfics de diagnòstic"))),
             shiny::tabPanel("Correlacions",
-                                     shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput("Corr")))),
+                                     shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput("Corr"))),
+                            shiny::hr(),
+                            shiny::h4("El present gràfic indica la correlació entre dues variables a partir de la intensitat del color del quadrat corresponent, segons indica la llegenda sota el mapa.")),
             shiny::tabPanel("Mapes",
                                      shinydashboard::box(shinycssloaders::withSpinner(shiny::plotOutput(
                         "Maps"
-                      )), width = 12)),
+                      )), width = 12),
+                      shiny::hr(),
+                      shiny::h4("Els mapes mostren el valor de cada una de les variables seleccionades pels 532 municipis de les conques internes de Catalunya amb dades")),
             shiny::tabPanel("Coeficients",
                                      shinydashboard::box(shinycssloaders::withSpinner(DT::DTOutput(
                        "Coefs"
